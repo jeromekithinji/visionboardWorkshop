@@ -55,7 +55,7 @@ export function ViewSubmissionsPage () {
       setError('')
 
       try {
-        const response = await fetch('/api/registrations')
+        const response = await fetch('/api/registrations/view?format=json')
 
         if (!response.ok) {
           throw new Error('Could not load submissions')
