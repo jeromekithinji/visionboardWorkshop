@@ -1,0 +1,94 @@
+.submissions-page {
+	min-height: 100svh;
+	padding: 16px;
+	background: #f4f4f8;
+}
+
+.submissions-header {
+	max-width: 1080px;
+	margin: 0 auto 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.submissions-header h1 {
+	margin: 0;
+	font-size: 1.8rem;
+}
+
+.download-button {
+	height: 40px;
+	padding: 0 14px;
+	border: 0;
+	border-radius: 8px;
+	background: #171a3b;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.download-button:disabled {
+	background: #9094a8;
+	cursor: not-allowed;
+}
+
+.submissions-status,
+.submissions-error {
+	margin: 16px auto;
+	max-width: 860px;
+	padding: 14px 16px;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	background: #fff;
+	border: 1px solid #ddd;
+}
+
+.submissions-error {
+	color: #a31824;
+	border-color: #e8b5bc;
+	background: #fff5f7;
+}
+
+.submissions-table-wrap {
+	max-width: 1080px;
+	margin: 0 auto;
+	background: #fff;
+	border: 1px solid #d9dbe4;
+	border-radius: 10px;
+	overflow: auto;
+}
+
+.submissions-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.submissions-table th,
+.submissions-table td {
+	padding: 10px 12px;
+	border-bottom: 1px solid #eceef5;
+	text-align: left;
+	font-size: 0.92rem;
+}
+
+.submissions-table th {
+	background: #171a3b;
+	color: #fff;
+}
+
+.submissions-table tbody tr:nth-child(even) td {
+	background: #fafbff;
+}
+
+@media (max-width: 640px) {
+	.submissions-header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.submissions-header h1 {
+		font-size: 1.5rem;
+	}
+}

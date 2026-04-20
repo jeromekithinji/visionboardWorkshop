@@ -1,0 +1,132 @@
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(18, 18, 30, 0.58);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	display: grid;
+	place-items: center;
+	padding: 20px;
+	z-index: 1000;
+}
+
+.registration-modal {
+	width: min(100%, 520px);
+	background: #f6f6f6;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: 0 24px 44px rgba(14, 15, 28, 0.28);
+}
+
+.registration-modal-header {
+	position: relative;
+	background: #171a3b;
+	color: #fff;
+	text-align: center;
+	padding: 16px 20px 14px;
+}
+
+.registration-close {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	border: 0;
+	background: transparent;
+	color: #c7c9d8;
+	font-size: 1.85rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.registration-close:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.registration-star {
+	color: #d1b170;
+	font-size: 1.7rem;
+	line-height: 1;
+}
+
+.registration-modal-header h3 {
+	margin: 6px 0 2px;
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 2.3rem;
+	color: #f6f4ee;
+}
+
+.registration-modal-header p {
+	margin: 0;
+	font-size: 1.05rem;
+	color: #d4d4df;
+}
+
+.registration-modal-body {
+	padding: 20px 22px 18px;
+	display: grid;
+	gap: 10px;
+}
+
+.registration-modal-body label {
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: #242436;
+}
+
+.registration-modal-body input {
+	height: 42px;
+	border-radius: 8px;
+	border: 1px solid #d8d8de;
+	padding: 0 12px;
+	font-size: 0.98rem;
+	outline: none;
+}
+
+.registration-modal-body input:focus {
+	border-color: #c8a866;
+	box-shadow: 0 0 0 2px rgba(200, 168, 102, 0.18);
+}
+
+.registration-submit {
+	margin-top: 8px;
+	height: 50px;
+	border: 0;
+	border-radius: 8px;
+	background: #cfb172;
+	color: #1d1933;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.96rem;
+	cursor: pointer;
+}
+
+.registration-submit:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.registration-error {
+	margin: 2px 0 0;
+	font-size: 0.84rem;
+	color: #b1272f;
+	text-align: center;
+}
+
+.registration-note {
+	margin: 2px 0 4px;
+	font-size: 0.82rem;
+	color: #6a6a78;
+	text-align: center;
+}
+
+@media (max-width: 480px) {
+	.registration-modal-header h3 {
+		font-size: 2rem;
+	}
+
+	.registration-modal-header p {
+		font-size: 0.96rem;
+	}
+}
