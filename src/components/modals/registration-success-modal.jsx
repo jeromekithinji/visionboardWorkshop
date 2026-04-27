@@ -27,7 +27,7 @@ export function RegistrationSuccessModal ({ onClose }) {
             You will receive a confirmation shortly.
           </p>
           <p>
-            We look forward to seeing you on <strong>9th May 2026!</strong>
+            We look forward to seeing you on <strong>9th June 2026!</strong>
           </p>
           <button type='button' className='success-action' onClick={onClose}>
             Close & Return to Page

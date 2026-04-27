@@ -36,7 +36,7 @@ export function HeroSection ({ countdownItems, onOpenRegistration }) {
                 <line x1='8' y1='3.5' x2='8' y2='7'></line>
                 <line x1='16' y1='3.5' x2='16' y2='7'></line>
               </svg>
-              <span>9th May 2026</span>
+              <span>9th June 2026</span>
             </li>
             <li>
               <svg className='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>
@@ -51,7 +51,7 @@ export function HeroSection ({ countdownItems, onOpenRegistration }) {
                 <path d='M12 20s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10z'></path>
                 <circle cx='12' cy='10' r='2.2'></circle>
               </svg>
-              <span>Venue TBA</span>
+              <span>Online</span>
             </li>
             <li>
               <svg className='meta-icon' viewBox='0 0 24 24' aria-hidden='true'>
