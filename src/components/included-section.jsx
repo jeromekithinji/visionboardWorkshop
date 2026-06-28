@@ -63,7 +63,7 @@ export function IncludedSection ({ inclusions }) {
         <p className='section-kicker'>What&apos;s Included</p>
         <h2>
           When You Register,
-          <span className='gold-emphasis'>You Receive</span>
+          <span className='gold-emphasis'>You Access</span>
         </h2>
         <div className='reset-divider' aria-hidden='true'></div>
         <div className='include-grid'>
