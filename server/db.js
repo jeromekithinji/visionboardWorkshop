@@ -23,7 +23,12 @@ export async function ensureRegistrationsTable () {
       full_name TEXT NOT NULL,
       email_address TEXT NOT NULL,
       phone_number TEXT,
+      workshop_day TEXT,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
+  `)
+  await pool.query(`
+    ALTER TABLE registrations
+    ADD COLUMN IF NOT EXISTS workshop_day TEXT;
   `)
 }

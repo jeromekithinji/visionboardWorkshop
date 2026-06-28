@@ -27,19 +27,21 @@ function App () {
   const [activeModal, setActiveModal] = useState(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState('')
+  const [registeredWorkshopDay, setRegisteredWorkshopDay] = useState('')
   const [formData, setFormData] = useState({
     fullName: '',
     emailAddress: '',
     phoneNumber: '',
+    workshopDay: '',
   })
 
   useEffect(() => {
-    document.title =
-      'Ladies Clarity & Visionboard Workshop | Clarity Changes Everything'
+    document.title = 'Ladies Clarity & Visionboard Workshop'
   }, [])
 
   const handleOpenRegistration = () => {
     setSubmitError('')
+    setRegisteredWorkshopDay('')
     setActiveModal('form')
   }
 
@@ -77,11 +79,13 @@ function App () {
           throw new Error(data?.message || 'Could not submit registration')
         }
 
+        setRegisteredWorkshopDay(formData.workshopDay)
         setActiveModal('success')
         setFormData({
           fullName: '',
           emailAddress: '',
           phoneNumber: '',
+          workshopDay: '',
         })
       } catch (error) {
         setSubmitError(error.message)
@@ -125,7 +129,10 @@ function App () {
         />
       )}
       {activeModal === 'success' && (
-        <RegistrationSuccessModal onClose={handleCloseModal} />
+        <RegistrationSuccessModal
+          workshopDay={registeredWorkshopDay}
+          onClose={handleCloseModal}
+        />
       )}
     </main>
   )

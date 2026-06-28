@@ -16,6 +16,7 @@ export function ViewSubmissionsPage () {
       'Full Name',
       'Email Address',
       'Phone Number',
+      'Workshop Day',
       'Submitted At',
     ]
 
@@ -24,6 +25,7 @@ export function ViewSubmissionsPage () {
       submission.full_name,
       submission.email_address,
       submission.phone_number || '',
+      submission.workshop_day || '',
       new Date(submission.created_at).toLocaleString(),
     ])
 
@@ -105,13 +107,14 @@ export function ViewSubmissionsPage () {
                 <th>Full Name</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Workshop Day</th>
                 <th>Submitted At</th>
               </tr>
             </thead>
             <tbody>
               {submissions.length === 0 && (
                 <tr>
-                  <td colSpan='5'>No submissions yet.</td>
+                  <td colSpan='6'>No submissions yet.</td>
                 </tr>
               )}
               {submissions.map((submission) => (
@@ -120,6 +123,7 @@ export function ViewSubmissionsPage () {
                   <td>{submission.full_name}</td>
                   <td>{submission.email_address}</td>
                   <td>{submission.phone_number || '-'}</td>
+                  <td>{submission.workshop_day || '-'}</td>
                   <td>{new Date(submission.created_at).toLocaleString()}</td>
                 </tr>
               ))}

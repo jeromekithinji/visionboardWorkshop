@@ -22,6 +22,7 @@ export default async function handler (req, res) {
           <td>${escapeHtml(row.full_name)}</td>
           <td>${escapeHtml(row.email_address)}</td>
           <td>${escapeHtml(row.phone_number || '-')}</td>
+          <td>${escapeHtml(row.workshop_day || '-')}</td>
           <td>${new Date(row.created_at).toLocaleString()}</td>
         </tr>
       `)
@@ -53,10 +54,11 @@ export default async function handler (req, res) {
                 <th>Full Name</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Workshop Day</th>
                 <th>Submitted At</th>
               </tr>
             </thead>
-            <tbody>${rows || '<tr><td colspan="5">No submissions yet.</td></tr>'}</tbody>
+            <tbody>${rows || '<tr><td colspan="6">No submissions yet.</td></tr>'}</tbody>
           </table>
         </body>
       </html>

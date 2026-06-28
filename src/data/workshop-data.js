@@ -1,4 +1,4 @@
-export const eventDate = new Date('2026-06-09T09:00:00+03:00')
+export const eventDate = new Date('2026-07-18T09:00:00+03:00')
 
 export const workshopHighlights = [
   'Feel stretched but not satisfied',
@@ -39,21 +39,17 @@ export const outcomes = [
       'Define measurable goals across life, career, finances, and wellness.',
     icon: '⌾',
   },
-  {
-    title: '90-Day Roadmap',
-    description:
-      'Leave with a structured 90-day execution roadmap to take action.',
-    icon: '→',
-  },
 ]
 
 export const inclusions = [
-  'Guided Clarity Workbook',
-  'Visionboard Materials',
-  '90-Day Action Planning Template',
+  'Guided Clarity Worksheet',
+  'Workshop Manual',
+  'Visionboarding Guide',
+  'Goal Setting Template',
   'Reflection & Alignment Tools',
-  'Post-Workshop Integration Guide',
-  'Private Accountability Community',
+  'Transformational Coaching',
+  '1-1 Post Alignment Coaching',
+  'Clarity Certificate',
 ]
 
 export const differenceItems = [

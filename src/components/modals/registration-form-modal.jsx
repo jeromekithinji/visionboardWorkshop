@@ -62,6 +62,20 @@ export function RegistrationFormModal ({
             disabled={isSubmitting}
           />
 
+          <label htmlFor='workshopDay'>Preferred Workshop Day</label>
+          <select
+            id='workshopDay'
+            name='workshopDay'
+            value={formData.workshopDay}
+            onChange={onChange}
+            required
+            disabled={isSubmitting}
+          >
+            <option value=''>Select a workshop day</option>
+            <option value='18th July 2026'>18th July 2026</option>
+            <option value='19th July 2026'>19th July 2026</option>
+          </select>
+
           <button type='submit' className='registration-submit' disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Submit Registration'}
           </button>

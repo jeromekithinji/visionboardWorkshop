@@ -1,3 +1,5 @@
+import secondSectionImage from '../assets/second-section.jpg'
+
 export function ResetSection ({ workshopHighlights }) {
   return (
     <section className='section section-reset'>
@@ -34,7 +36,7 @@ export function ResetSection ({ workshopHighlights }) {
         </div>
         <div className='reset-image-wrap'>
           <img
-            src='https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=1400&q=80'
+            src={secondSectionImage}
             alt='Women in a workshop session around a table'
           />
         </div>

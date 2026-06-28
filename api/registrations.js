@@ -2,11 +2,11 @@ import { createRegistration, getRegistrations } from './_registrations-shared.js
 
 export default async function handler (req, res) {
 	if (req.method === 'POST') {
-		const { fullName, emailAddress, phoneNumber } = req.body ?? {}
+		const { fullName, emailAddress, phoneNumber, workshopDay } = req.body ?? {}
 
-		if (!fullName || !emailAddress) {
+		if (!fullName || !emailAddress || !workshopDay) {
 			res.status(400).json({
-				message: 'fullName and emailAddress are required',
+				message: 'fullName, emailAddress, and workshopDay are required',
 			})
 			return
 		}
@@ -16,6 +16,7 @@ export default async function handler (req, res) {
 				fullName,
 				emailAddress,
 				phoneNumber,
+				workshopDay,
 			})
 			res.status(201).json({
 				message: 'Registration submitted successfully',

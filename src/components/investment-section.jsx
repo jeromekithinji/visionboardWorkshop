@@ -1,11 +1,31 @@
+import { useState } from 'react'
+
+const currencyOptions = [
+  {
+    code: 'KSH',
+    label: 'Ksh',
+    price: 'Ksh 10,000',
+  },
+  {
+    code: 'USD',
+    label: 'USD',
+    price: '$80',
+  },
+  {
+    code: 'NGN',
+    label: 'Naira',
+    price: '₦112,000',
+  },
+]
+
 export function InvestmentSection ({ inclusions, onOpenRegistration }) {
+  const [selectedCurrency, setSelectedCurrency] = useState('KSH')
+  const selectedPrice = currencyOptions.find(
+    (option) => option.code === selectedCurrency,
+  ).price
+
   const investmentInclusions = inclusions
-    .filter((item) => item !== 'Visionboard Materials')
-    .map((item) =>
-      item === '90-Day Action Planning Template'
-        ? 'A personal goals Setting Template and guide'
-        : item,
-    )
+    .filter((item) => item !== 'Visionboarding Guide')
     .concat('Access to the Finsmart Assessment')
 
   return (
@@ -20,8 +40,24 @@ export function InvestmentSection ({ inclusions, onOpenRegistration }) {
         <article className='pricing-card'>
           <header className='pricing-top'>
             <p className='pricing-title'>Full Day Workshop</p>
-            <p className='price'>Ksh 10,000</p>
-            <p className='pricing-date'>One-time investment · Tuesday, 9th June 2026</p>
+            <p className='price'>{selectedPrice}</p>
+            <div className='currency-selector' aria-label='Select currency'>
+              {currencyOptions.map((option) => (
+                <button
+                  key={option.code}
+                  type='button'
+                  className={
+                    option.code === selectedCurrency
+                      ? 'currency-button active'
+                      : 'currency-button'
+                  }
+                  aria-pressed={option.code === selectedCurrency}
+                  onClick={() => setSelectedCurrency(option.code)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
           </header>
           <div className='pricing-body'>
             <h3>Everything Included:</h3>

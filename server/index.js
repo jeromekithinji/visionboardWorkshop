@@ -25,11 +25,11 @@ app.get('/api/health', (_req, res) => {
 })
 
 app.post('/api/registrations', async (req, res) => {
-  const { fullName, emailAddress, phoneNumber } = req.body ?? {}
+  const { fullName, emailAddress, phoneNumber, workshopDay } = req.body ?? {}
 
-  if (!fullName || !emailAddress) {
+  if (!fullName || !emailAddress || !workshopDay) {
     res.status(400).json({
-      message: 'fullName and emailAddress are required',
+      message: 'fullName, emailAddress, and workshopDay are required',
     })
     return
   }
@@ -37,11 +37,21 @@ app.post('/api/registrations', async (req, res) => {
   try {
     const result = await pool.query(
       `
-      INSERT INTO registrations (full_name, email_address, phone_number)
-      VALUES ($1, $2, $3)
-      RETURNING id, full_name, email_address, phone_number, created_at
+      INSERT INTO registrations (
+        full_name,
+        email_address,
+        phone_number,
+        workshop_day
+      )
+      VALUES ($1, $2, $3, $4)
+      RETURNING id, full_name, email_address, phone_number, workshop_day, created_at
       `,
-      [fullName.trim(), emailAddress.trim(), phoneNumber?.trim() || null],
+      [
+        fullName.trim(),
+        emailAddress.trim(),
+        phoneNumber?.trim() || null,
+        workshopDay.trim(),
+      ],
     )
 
     res.status(201).json({
@@ -60,7 +70,7 @@ app.get('/api/registrations', async (_req, res) => {
   try {
     const result = await pool.query(
       `
-      SELECT id, full_name, email_address, phone_number, created_at
+      SELECT id, full_name, email_address, phone_number, workshop_day, created_at
       FROM registrations
       ORDER BY created_at DESC
       `,
@@ -81,7 +91,7 @@ app.get('/api/registrations/view', async (req, res) => {
   try {
     const result = await pool.query(
       `
-      SELECT id, full_name, email_address, phone_number, created_at
+      SELECT id, full_name, email_address, phone_number, workshop_day, created_at
       FROM registrations
       ORDER BY created_at DESC
       `,
@@ -101,6 +111,7 @@ app.get('/api/registrations/view', async (req, res) => {
           <td>${escapeHtml(row.full_name)}</td>
           <td>${escapeHtml(row.email_address)}</td>
           <td>${escapeHtml(row.phone_number || '-')}</td>
+          <td>${escapeHtml(row.workshop_day || '-')}</td>
           <td>${new Date(row.created_at).toLocaleString()}</td>
         </tr>
       `)
@@ -131,10 +142,11 @@ app.get('/api/registrations/view', async (req, res) => {
                 <th>Full Name</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
+                <th>Workshop Day</th>
                 <th>Submitted At</th>
               </tr>
             </thead>
-            <tbody>${rows || '<tr><td colspan="5">No submissions yet.</td></tr>'}</tbody>
+            <tbody>${rows || '<tr><td colspan="6">No submissions yet.</td></tr>'}</tbody>
           </table>
         </body>
       </html>

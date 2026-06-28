@@ -1,6 +1,6 @@
 import './registration-success-modal.css'
 
-export function RegistrationSuccessModal ({ onClose }) {
+export function RegistrationSuccessModal ({ workshopDay, onClose }) {
   return (
     <div className='modal-overlay' role='dialog' aria-modal='true'>
       <div className='success-modal'>
@@ -27,7 +27,7 @@ export function RegistrationSuccessModal ({ onClose }) {
             You will receive a confirmation shortly.
           </p>
           <p>
-            We look forward to seeing you on <strong>9th June 2026!</strong>
+            We look forward to seeing you on <strong>{workshopDay}!</strong>
           </p>
           <button type='button' className='success-action' onClick={onClose}>
             Close & Return to Page

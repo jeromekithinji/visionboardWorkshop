@@ -4,7 +4,7 @@ export function TransformationSection ({ outcomes }) {
       <div className='section-content'>
         <p className='section-kicker'>The Transformation</p>
         <h2>
-          What Happens In This Room
+          What Happens In This Workshop
           <span>Changes Your Next Season</span>
         </h2>
         <p className='transformation-intro'>
