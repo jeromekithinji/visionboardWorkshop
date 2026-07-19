@@ -72,8 +72,7 @@ export function RegistrationFormModal ({
             disabled={isSubmitting}
           >
             <option value=''>Select a workshop day</option>
-            <option value='18th July 2026'>18th July 2026</option>
-            <option value='19th July 2026'>19th July 2026</option>
+            <option value='19th September 2026'>19th September 2026</option>
           </select>
 
           <button type='submit' className='registration-submit' disabled={isSubmitting}>

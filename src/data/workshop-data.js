@@ -1,4 +1,4 @@
-export const eventDate = new Date('2026-07-18T09:00:00+03:00')
+export const eventDate = new Date('2026-09-19T09:00:00+03:00')
 
 export const workshopHighlights = [
   'Feel stretched but not satisfied',

@@ -1,4 +1,4 @@
-import helenKithinjiImage from '../assets/helen-kithinji.png'
+import helenKithinjiImage from '../assets/helen-kithinji.jpeg'
 
 export function DifferenceSection ({ differenceItems }) {
   return (
