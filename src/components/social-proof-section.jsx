@@ -3,13 +3,8 @@ export function SocialProofSection ({ testimonials }) {
     <section className='section section-social-proof'>
       <div className='section-content'>
         <p className='section-kicker'>Social Proof</p>
-        <h2>
-          What Women Are
-          <span className='gold-emphasis'>Saying</span>
-        </h2>
-        <div className='reset-divider' aria-hidden='true'></div>
         <p className='social-intro'>
-          Real stories from women who have experienced Helen&apos;s transformative
+          Real stories from people who have experienced Helen&apos;s transformative
           coaching and workshops.
         </p>
         <div className='grid testimonials'>

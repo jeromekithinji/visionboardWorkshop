@@ -3,7 +3,7 @@ export function HeroSection ({ countdownItems, onOpenRegistration }) {
     <section className='hero'>
       <div className='hero-content'>
         <div className='hero-icon' aria-hidden='true'>✦</div>
-        <div className='eyebrow'>The Ladies Clarity & Visionboard Workshop</div>
+        <div className='eyebrow'>The Clarity & Visionboard Workshop</div>
         <h1>
           Clarity Changes
           <span className='hero-accent'>Everything</span>

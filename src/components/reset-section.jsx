@@ -20,7 +20,7 @@ export function ResetSection ({ workshopHighlights }) {
             But somewhere between responsibilities, expectations, and
             ambition... alignment may have shifted.
           </p>
-          <p className='reset-subheading'>This workshop is for women who:</p>
+          <p className='reset-subheading'>This workshop is for people who:</p>
           <ul className='list reset-list'>
             {workshopHighlights.map((item) => (
               <li key={item}>

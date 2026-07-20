@@ -1,7 +1,7 @@
 export function SiteFooter () {
   return (
     <footer className='site-footer'>
-      <p>Ladies Clarity & Visionboard Workshop</p>
+      <p>Clarity & Visionboard Workshop</p>
       <p>Facilitated by Helen Kithinji</p>
       <p className='footer-email'>
         <span className='email-icon' aria-hidden='true'>
