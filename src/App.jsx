@@ -36,7 +36,7 @@ function App () {
   })
 
   useEffect(() => {
-    document.title = 'Ladies Clarity & Visionboard Workshop'
+    document.title = 'Clarity & Visionboard Workshop'
   }, [])
 
   const handleOpenRegistration = () => {
