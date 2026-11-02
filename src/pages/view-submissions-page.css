@@ -51,6 +51,38 @@
 	background: #fff5f7;
 }
 
+.submissions-groups {
+	max-width: 1080px;
+	margin: 0 auto;
+	display: grid;
+	gap: 14px;
+}
+
+.submissions-group {
+	background: #fff;
+	border: 1px solid #d9dbe4;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.submissions-group summary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 14px 16px;
+	background: #171a3b;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.submissions-group summary span:last-child {
+	color: #d4d6e6;
+	font-size: 0.86rem;
+	font-weight: 600;
+}
+
 .submissions-table-wrap {
 	max-width: 1080px;
 	margin: 0 auto;
@@ -90,5 +122,10 @@
 
 	.submissions-header h1 {
 		font-size: 1.5rem;
+	}
+
+	.submissions-group summary {
+		align-items: flex-start;
+		flex-direction: column;
 	}
 }
